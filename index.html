@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fancy Demo Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #2a2a4f);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at top left, #6a11cb, #2575fc);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    }
+
+    section {
+      padding: 80px 10%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #111;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ffd700; }
+      to { text-shadow: 0 0 20px #fff, 0 0 40px #ff8a00; }
+    }
+
+    /* Floating background shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .shape.one {
+      width: 200px;
+      height: 200px;
+      background: #ff8a00;
+      top: 10%;
+      left: 5%;
+    }
+
+    .shape.two {
+      width: 300px;
+      height: 300px;
+      background: #e52e71;
+      bottom: 10%;
+      right: 5%;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-40px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shape one"></div>
+    <div class="shape two"></div>
+    <h1>Welcome to the Future</h1>
+    <p>A sleek, modern and fancy demo website — fully self‑contained.</p>
+    <button class="btn" onclick="scrollToContent()">Explore More</button>
+  </header>
+
+  <section id="content">
+    <div class="card">
+      <h3>⚡ Fast</h3>
+      <p>Optimized layout with smooth animations and responsive grid design.</p>
+    </div>
+    <div class="card">
+      <h3>🎨 Stylish</h3>
+      <p>Modern gradients, glassmorphism effects and elegant typography.</p>
+    </div>
+    <div class="card">
+      <h3>🔒 Secure</h3>
+      <p>Clean and minimal structure that works anywhere without dependencies.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Fancy Demo Website — Crafted with pure HTML, CSS & JavaScript.
+  </footer>
+
+  <script>
+    function scrollToContent() {
+      document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
